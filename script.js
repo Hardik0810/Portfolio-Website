@@ -57,4 +57,35 @@ portfolioLists.forEach((list, idx) => {
 
 setTimeout(()=> {
 sections[4].classList.remove('active');
-},1500)
+},1500);
+
+// Initialize EmailJS with your Public Key
+(function () {
+    emailjs.init("dN1GfBMxIaBv8Wc_7");
+})();
+
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector('.btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    emailjs.sendForm('service_hyzfohi', 'template_xjwekdk', contactForm)
+        .then(() => {
+            submitBtn.textContent = 'Message Sent!';
+            contactForm.reset();
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        })
+        .catch((error) => {
+            console.error('EmailJS error:', error);
+            submitBtn.textContent = 'Failed — Try Again';
+            submitBtn.disabled = false;
+        });
+});

@@ -55,6 +55,18 @@ portfolioLists.forEach((list, idx) => {
     })
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.view-more-btn');
+    const moreText = document.querySelector('.desc-more');
+
+    if (btn && moreText) {
+        btn.addEventListener('click', function () {
+            moreText.classList.toggle('show');
+            btn.textContent = moreText.classList.contains('show') ? 'View Less' : 'View More';
+        });
+    }
+});
+
 setTimeout(()=> {
 sections[4].classList.remove('active');
 },1500);

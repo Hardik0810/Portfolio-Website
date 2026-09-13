@@ -769,4 +769,11 @@ a:hover .tooltip,
     }
 }
 
+.desc-more {
+    display: none;
+}
+
+.desc-more.show {
+    display: inline;
+}
 

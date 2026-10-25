@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
@@ -10,13 +9,12 @@
     border: none;
     outline: none;
     font-family: "Poppins", sans-serif;
-
 }
 
 :root{
     --nav-bg-color: rgba(255,255,255,.1);
     --bg-color: #171f2b;
-    --second-bg-color: #1f2733 ;
+    --second-bg-color: #1f2733;
     --third-bg-color:  #2d3542;
     --main-color:  #0ef;
     --white-color:  #fff;
@@ -39,16 +37,15 @@
     color: var(--white-color);
 }
 
-
 html{
-    font-size: 62.5%;;
+    font-size: 62.5%;
 }
 
 body{
     color: var(--white-color);
     overflow: hidden;
-
 }
+
 p{
     font-size: 1.6rem;
 }
@@ -80,17 +77,14 @@ p{
 .nav .nav-list{
     display: flex;
     justify-content: space-evenly;
-
 }
-
 
 .nav-list li{
     position: relative;
     display: flex;
     font-size: 3rem;
     cursor: pointer;
-    transition: .3s;;
-
+    transition: .3s;
 }
 
 .nav-list li:hover,
@@ -118,10 +112,8 @@ p{
 .nav-list li:hover .tooltip,
 a:hover .tooltip, 
 .portfolio-item:hover .work-info{
-
     visibility: visible;
     opacity: 1;
-
 }
 
 .container{
@@ -158,20 +150,55 @@ a:hover .tooltip,
     background: var(--bg-color);
     padding: 0 10%;
     backface-visibility: hidden;
-
 }
+
 .section:nth-child(even){
     background: var(--second-bg-color);
 }
 
-.section.about{
-    transform: translateX(50vw) translateZ(-50vw) rotateY(90deg);
+.home {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+/* About Section Scroll & Structure Setup */
+
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 4rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+}
+
+.about-video-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.about-video-box video {
+    width: 100%;
+    max-width: 65rem;
+    border-radius: 1.6rem;
+    border: .2rem solid var(--main-color);
+    box-shadow: 0 0 2rem rgba(0, 238, 255, 0.25);
+    background: var(--third-bg-color);
 }
 
 .section.resume{
-    transform: translateZ(-100vw) rotateY(-180deg) ;
-    transform-origin: 50% ;
-
+    transform: translateZ(-100vw) rotateY(-180deg);
+    transform-origin: 50%;
 }
 
 .section.portfolio{
@@ -181,12 +208,10 @@ a:hover .tooltip,
 .section.contact{
     visibility: hidden;
     transition-delay: .5s;
-
 }
 
 .section.contact.active{
     visibility: visible;
-
 }
 
 .section.contact.action-contact{
@@ -197,14 +222,6 @@ a:hover .tooltip,
     transition-delay: 0s;
 }
 
-
-.home, 
-.about {
-    display: flex;
-    align-items: center;
-    gap: 5rem;  
-}
-
 .home-info h1{
     font-size: 5.5rem;
     color: var(--main-color);
@@ -212,12 +229,9 @@ a:hover .tooltip,
 }
 .home-info h3{
     font-size: 3rem;
-
-
 }
 .desc{
    margin: 1rem 0 2rem; 
-
 }
 
 .home-info .btn-sci{
@@ -234,18 +248,16 @@ a:hover .tooltip,
     font-size: 1.6rem;
     color: var(--bg-color);
     font-weight: 600;
-    transition: .3s ;
-
+    transition: .3s;
+    cursor: pointer;
 }
 
 .btn:hover{
     box-shadow: none;
-
 }
 
 .home-info .btn-sci .sci{
     margin-left: 2rem;
-
 }
 
 .home-info .btn-sci .sci a {
@@ -258,15 +270,11 @@ a:hover .tooltip,
     color: var(--main-color);
     margin: 0 .8rem;
     transition: .3s;
-
 }
-
-
 
 .home-info .btn-sci .sci a:hover{
     background: var(--main-color);
     color: var(--bg-color);
-
 }
 
 .img-box{
@@ -281,7 +289,7 @@ a:hover .tooltip,
     justify-content: center;
     overflow: hidden;
     transition: 1s;
-
+    flex-shrink: 0;
 }
 
 .img-box.home-img:hover{
@@ -294,7 +302,6 @@ a:hover .tooltip,
     display: block;
     width: 85%;
     object-fit: cover;
-
 }
 
 .img-box.about-img {
@@ -304,46 +311,39 @@ a:hover .tooltip,
 
 .img-box.about-img img{
     z-index: -1;
-
 }
 
 .title{
     font-size: 4rem;
-    text-align:center ;
+    text-align: center;
 }
 
 .about-info .title{
     text-align: left;
-
 }
 
 .about-info h3{
     font-size: 2.5rem;
     color: var(--main-color);
     margin-top: -1rem;
-
-
 }
 
-
 .about-info .btn{
-    padding: 1.2rem 4rem ;
-    
+    padding: 1.2rem 4rem;
 }
 
 .resume,
 .portfolio{
     padding-top: 2rem;
     padding-bottom: 28rem;
-
 }
+
 .tab-box {
     display: flex;
     width: 100%;
     height: 5rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-
 }
 
 .tab-list{
@@ -374,12 +374,10 @@ a:hover .tooltip,
     font-size: 2.5rem;   
 }
 
-
 .tab-wrapper{
-  position : relative;
-  width: 100%;
-  height: 100%;
-
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .tab-grid{
@@ -402,9 +400,7 @@ a:hover .tooltip,
     opacity: 1;
     transform: scale(1);
     transition: .5s;
-
 }
-
 
 .tab-item{
     display: flex;
@@ -417,7 +413,6 @@ a:hover .tooltip,
 
 .tab-item h4{
     font-size: 2.3rem;
-
 }
 
 .resume-item h4:nth-child(1), 
@@ -431,7 +426,6 @@ a:hover .tooltip,
     position: relative;
     color: var(--white-color);
     margin-left: 2rem;
-
 }
 
 .resume-item h4:nth-child(3)::before{
@@ -444,22 +438,18 @@ a:hover .tooltip,
     height: 1rem;
     background: var(--main-color);
     border-radius: 50%;
-
 }
-
 
 .tab-item p{
     margin-top: 1rem;
-
 }
 
 .resume-box.skills{
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)) ;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 }
 
 .resume-box.skills .resume-item{
     align-items: center;
-
 }
 
 .resume-box.skills .resume-item i{
@@ -479,10 +469,10 @@ a:hover .tooltip,
     justify-content: flex-end;
 }
 
-
 .portfolio-box.work .portfolio-item {
-    position : relative;
+    position: relative;
 }
+
 .portfolio-box.work .portfolio-item::before{
     content: '';
     position: absolute;
@@ -500,6 +490,7 @@ a:hover .tooltip,
 .portfolio-box.work .portfolio-item:hover::before{
     opacity: .9;
 }
+
 .portfolio-item .work-img{
     position: absolute;
     left: 0;
@@ -509,8 +500,9 @@ a:hover .tooltip,
     border-radius: .8rem;
     overflow: hidden;
 }
+
 .portfolio-item .work-img img{
-    display:block;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -530,8 +522,8 @@ a:hover .tooltip,
 
 .portfolio-item .work-info h4{
     line-height: 1;
-
 }
+
 .portfolio-item .work-info .tech-used{
     color: var(--main-color);
     border-bottom: .1rem solid var(--white-color);
@@ -548,8 +540,8 @@ a:hover .tooltip,
     font-size: 2.5rem;
     color: var(--bg-color);
     transition: .3s;
-
 }
+
 .portfolio-item .work-info a:hover{
     background-color: var(--main-color);
 }
@@ -560,7 +552,6 @@ a:hover .tooltip,
 
 .portfolio-item .work-info a:nth-child(1) i{
     transform: rotate(135deg);
-
 }
 
 .portfolio-item .service-icon{
@@ -569,25 +560,26 @@ a:hover .tooltip,
     align-items: center;
     margin-bottom: .5rem;
 }
+
 .portfolio-item .service-icon .icon{
     font-size: 5rem;
     margin-left: -.3rem;
     transition: .3s;
 }
+
 .portfolio-item:hover .service-icon .icon{
     color: var(--main-color);
-
 }
+
 .portfolio-item:hover .service-icon a{
     background: var(--main-color);
-
 }
 
 .portfolio-item .service-icon a i{
     transform: rotate(-135deg);
     transition: .3s;
-
 }
+
 .portfolio-item .service-icon a:hover i{
     transform: rotate(-180deg);
 }
@@ -603,13 +595,14 @@ a:hover .tooltip,
 .contact{
     padding-top: 2rem;
     padding-bottom: 18rem;
-
 }
+
 .contact-wrapper{
     display: flex;
     justify-content: center;
     height: 100%;   
 }
+
 .contact-form{
     display: flex;
     flex-direction: column;
@@ -617,11 +610,11 @@ a:hover .tooltip,
     align-items: center;
     width: 70rem;  
 }
+
 .contact-form h3{
     font-size: 3rem;
     color: var(--main-color);
     margin-bottom: 1rem;
-
 }
 
 .contact-form .field-box{
@@ -629,6 +622,7 @@ a:hover .tooltip,
     flex-wrap: wrap;
     gap: 2rem;
 }
+
 .contact-form .field-box input,
 .contact-form .field-box textarea{
     flex: 1 1 30rem;
@@ -643,34 +637,37 @@ a:hover .tooltip,
     height: 20rem;
     resize: none;
 }
+
 .contact-form .contact-btn{
     margin-top: 2rem;
 }
 
-.contact-form .contact-btn .btn{
-    cursor: pointer;
-
+.desc-more {
+    display: none;
 }
 
+.desc-more.show {
+    display: inline;
+}
 
+/* Responsive Media Queries */
 @media screen and (max-width: 1200px){
     html{
         font-size: 55%;
-
     }
 }
 
 @media screen and (max-width: 992px){
     .section{
         padding: 0 4%;
-        
     }
+    
     .resume,
+    .about-scroll { padding: 3rem 4% 14rem; }
     .portfolio{
         padding-top: 1.5rem;
         padding-bottom: 27rem;
     }
-
     .contact{
         padding-top: 1.5rem;
         padding-bottom: 18rem;
@@ -680,37 +677,33 @@ a:hover .tooltip,
 @media screen and (max-width: 768px){
     html{
         font-size: 50%;
-
     }
     .nav{
         bottom: 0;
     }
-    .home,
-    .about{
+    .home{
         flex-direction: column-reverse;
         justify-content: center;
         gap: 2rem;
         padding-bottom: 6rem;
-
     }
-
-    .about{
+    .about-content{
         flex-direction: column;
-
+        gap: 2rem;
+    }
+    .section.about {
+        padding-bottom: 22rem;
     }
     .img-box{
         width: 35rem;
         height: 35rem;
-
     }
     .resume,
     .portfolio{
         padding-bottom: 25rem;
-
     }
     .contact{
         padding-bottom: 16rem;
-        
     }
 }
 
@@ -739,7 +732,6 @@ a:hover .tooltip,
     }
     .home-info h1{
         font-size: 5rem;
-
     }
     .home-info .btn-sci{
         flex-direction: column-reverse;
@@ -755,9 +747,7 @@ a:hover .tooltip,
     .about-info .title{
         text-align: center;
     }
-
 }
-
 
 @media screen and (max-width: 350px){
     .img-box{
@@ -768,12 +758,46 @@ a:hover .tooltip,
         font-size: 2.3rem;
     }
 }
+.section { pointer-events: none; }
+.section.active { pointer-events: auto; }
 
-.desc-more {
-    display: none;
+.section.about {
+    transform: translateX(50vw) translateZ(-50vw) rotateY(90deg);
+    padding: 0;
+    overflow: hidden;      /* the face itself no longer scrolls */
 }
 
-.desc-more.show {
-    display: inline;
+.about-scroll {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    padding: 5rem 10% 14rem;
 }
 
+.about-scroll::-webkit-scrollbar { width: 1rem; }
+.about-scroll::-webkit-scrollbar-track { background: var(--third-bg-color); }
+
+/* smaller photo = less to scroll */
+.section.about .img-box {
+    width: min(26vw, 30rem);
+    height: min(26vw, 30rem);
+}
+
+.about-video-box video { max-width: 52rem; }
+
+
+.box.flat {
+    transform: none !important;
+    transition: none !important;
+}
+.box.flat .section {
+    visibility: hidden;
+}
+.box.flat .section.active {
+    visibility: visible;
+    transform: none !important;
+}
+.section.about {
+    isolation: isolate;
+}

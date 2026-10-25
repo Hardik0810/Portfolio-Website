@@ -101,3 +101,42 @@ contactForm.addEventListener('submit', function (e) {
             submitBtn.disabled = false;
         });
 });
+
+let flatTimer;
+
+function unflatten() {
+    if (!cube.classList.contains('flat')) return;
+    cube.style.transition = 'none';   // restore the 3D state instantly
+    cube.classList.remove('flat');
+    void cube.offsetWidth;            // force a reflow
+    cube.style.transition = '';       // re-enable the spin animation
+}
+
+navs.forEach((nav, idx) => {
+    nav.addEventListener('click', () => {
+        clearTimeout(flatTimer);
+        unflatten();
+
+        document.querySelector('.nav-list li.active').classList.remove('active');
+        nav.classList.add('active');
+
+        cube.style.transform = `rotateY(${idx * -90}deg)`;
+
+        document.querySelector('.section.active').classList.remove('active');
+        sections[idx].classList.add('active');
+
+        const array = Array.from(sections);
+        const arrSec = array.slice(1, -1);
+        arrSec.forEach(sec => {
+            if (sec.classList.contains('active')) {
+                sections[4].classList.add('action-contact');
+            }
+        });
+        if (sections[0].classList.contains('active')) {
+            sections[4].classList.remove('action-contact');
+        }
+
+        // after the 2s spin finishes, drop the 3D so clicks, video and scroll behave normally
+        flatTimer = setTimeout(() => cube.classList.add('flat'), 2100);
+    });
+});
